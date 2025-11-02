@@ -1,8 +1,4 @@
 
-
-
-
-
 ------------------------------Experiment 08-------------------------------
 ---------------------Hard Level Problem-----------------------------
 /*
@@ -19,27 +15,6 @@ HINT: YOU HAVE TO USE SAVEPOINTS
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 DROP TABLE IF EXISTS students;
 
 CREATE TABLE students (
@@ -50,7 +25,6 @@ CREATE TABLE students (
 );
 
 -- EXCEPTION HANDLING
-
 
 DO $$
 BEGIN TRANSACTION 
@@ -72,10 +46,7 @@ BEGIN TRANSACTION
 END;
 $$;
 
-
 SELECT * FROM students;
-
-
 
 --VIOLATED SCENARIO
 DO $$
@@ -98,53 +69,4 @@ BEGIN TRANSACTION
     END;
 END;
 $$;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
