@@ -1,6 +1,4 @@
 
-
-
 ----------------EXPERIMENT 07----------------------------------
 
 ----------------------MEDIUM LEVEL PROBLEM----------------------------
@@ -8,23 +6,8 @@
 --1. WHENEVER THERE IS A INSERTION ON STUDENT TABLE THEN, THE CURRENTLY INSERTED OR DELETED 
 --ROW SHOULD BE PRINTED AS IT AS ON THE OUTPUT CONSOLE WINDOW.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --SOLUTION
+
 CREATE OR REPLACE FUNCTION fn_student_audit()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -47,25 +30,6 @@ BEGIN
 END;
 $$ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ----------------------HARD LEVEL PROBLEM----------------------------
 
 /*
@@ -80,27 +44,6 @@ Whenever an employee is deleted from tbl_employee, a record should be added to t
 The solution must use PostgreSQL triggers.
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --THERE IS INSERT IN EMPLOYEE TABLE AT 'TIME'
 
 CREATE TABLE tbl_employee (
@@ -113,8 +56,6 @@ CREATE TABLE tbl_employee_audit (
     sno SERIAL PRIMARY KEY,
     message TEXT
 );
-
-
 
 CREATE OR REPLACE FUNCTION audit_employee_changes()
 RETURNS TRIGGER 
@@ -137,16 +78,12 @@ BEGIN
 END;
 $$
 
-
-
 CREATE TRIGGER trg_employee_audit
 AFTER INSERT OR DELETE 
 ON 
 tbl_employee
 FOR EACH ROW
 EXECUTE FUNCTION audit_employee_changes();
-
-
 
 --TESTING THE TRIGGER
 -- Insert an employee
@@ -157,52 +94,3 @@ DELETE FROM tbl_employee WHERE emp_name = 'Aman';
 
 -- Check audit log
 SELECT * FROM tbl_employee_audit;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
